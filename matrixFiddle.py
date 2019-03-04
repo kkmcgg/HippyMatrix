@@ -2,7 +2,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 import random
-primes = np.loadtxt(r'D:\primes.txt',dtype ='int').flatten().tolist()
+primes = np.loadtxt(r'primes.txt',dtype ='int').flatten().tolist()
 primes = primes[0:50]
 size = max(primes)
 
@@ -51,7 +51,7 @@ title = plt.title("")
 
 def update(t):
 	mod = float(T-t)/T/float(T)
-	print mod
+	print(mod)
 	b = np.abs(np.remainder(a, mod)/mod-mod/2.0)
 	# b = np.roll(b, t)
 	# b = np.roll(b, t,axis=0)
@@ -81,6 +81,6 @@ def update2(t):
 	im.set_array(c)
 	title.set_text(str(t))
 	
-ani = matplotlib.animation.FuncAnimation(fig, func=update, frames=T, 
+ani = matplotlib.animation.FuncAnimation(fig, func=update2, frames=T, 
                        repeat=False, interval=1)
 plt.show()
